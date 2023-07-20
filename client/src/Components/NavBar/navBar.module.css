@@ -1,0 +1,89 @@
+.navbar {
+  display: flex;
+  align-items: center;
+}
+@font-face {
+  font-family: 'Fuente';
+  src: url('../../Fuentes/RussoOne-Regular.ttf');
+}
+@font-face {
+  font-family: 'F';
+  src: url('../../Fuentes/BungeeInline-Regular.ttf');
+}
+
+
+.pnav {
+  margin: 0;
+  margin-right: 250px;
+  margin-left: 70px;
+  font-size: 40px;
+  font-family: 'F';
+  color:  #272aee;
+  text-shadow: 5px 8px 10px rgba(37, 15, 235, 0.527);
+}
+
+
+
+.navinput {
+  margin-right: 10px;
+  color: aliceblue;
+  background-color: rgb(65, 65, 65);
+  border: 2px solid  #272aee;
+  border-radius: 5px;
+  width: 150px;
+  height: 25px;
+ 
+}
+
+.buttonnav {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color:  #272aee;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'F';
+ color: rgb(12, 12, 12);
+}
+
+.containernav {
+  display: flex;
+  align-items: center;
+}
+
+.linknavli {
+  margin-right: 40px;
+  font-family: 'Fuente';
+  text-decoration: none;
+  font-size: 20px;
+
+}
+
+.linknavli2 {
+  margin-left: auto;
+  font-family: 'Fuente';
+  text-decoration: none;
+  
+  
+}
+
+.linknavli {
+  list-style: none;
+  
+}
+
+.linknavli a {
+  text-decoration: none;
+  display: inline;
+  color: #272aee;
+}
+
+.linknavli2 {
+  list-style: none;
+}
+
+.linknavli2 a {
+  text-decoration: none;
+  display: inline;
+  color: #272aee;
+}

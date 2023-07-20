@@ -1,0 +1,37 @@
+.pagnav {
+    margin-top: 5px;
+    margin-bottom: 5px; 
+  }
+  
+  .navul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  .navli {
+    margin-right: 10px;
+  }
+  
+  .pagnav li:last-child {
+    margin-right: 0;
+  }
+  
+  .pagnav a {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #161616; /* Color del texto */
+    background-color: #2213f5; /* Color de fondo */
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .pagnav a:hover {
+    background-color: #2305a8; /* Color de fondo al pasar el cursor */
+  }
+  
