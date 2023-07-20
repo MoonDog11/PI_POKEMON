@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
 # **POKEMON** | Proyecto Individual
@@ -257,3 +258,7 @@ Ten en cuenta que en esta instancia no es obligatorio el desarrollo de testing p
 <br />
 
 <img src="./pokemon.png" alt="" />
+=======
+# PI_POKEMON
+PI Bootcamp Henry
+>>>>>>> c5aba10f30a18a7422921070225d9eb6175b6f58
