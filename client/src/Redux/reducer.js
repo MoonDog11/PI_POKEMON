@@ -29,7 +29,6 @@ const rootReducer = (state = initialState, action) => {
     case POST_POKEMON:
       return {
         ...state,
-        // Aquí podrías realizar alguna actualización en el estado si lo deseas
       };
 
     case GET_TYPES:
