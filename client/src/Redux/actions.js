@@ -10,13 +10,30 @@ export const GET_TYPES = "GET_TYPES";
 export const POST_POKEMON = "POST_POKEMON";
 export const GET_ID_POKEMON = "GET_ID_POKEMON";
 
+const cache = {};
+
 export function getPokemon() {
   return async function (dispatch) {
-    const json = await axios.get("http://localhost:3001/pokemon");
-    return dispatch({
-      type: GET_POKEMON,
-      payload: json.data,
-    });
+    try {
+      if (cache["all"]) {
+        dispatch({
+          type: GET_POKEMON,
+          payload: cache["all"],
+        });
+      } else {
+        const json = await axios.get("http://localhost:3001/pokemon");
+        const pokemonData = json.data;
+
+        cache["all"] = pokemonData;
+
+        dispatch({
+          type: GET_POKEMON,
+          payload: pokemonData,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
 

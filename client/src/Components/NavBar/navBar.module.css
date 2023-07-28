@@ -1,89 +1,192 @@
-.navbar {
-  display: flex;
-  align-items: center;
-}
-@font-face {
-  font-family: 'Fuente';
-  src: url('../../Fuentes/RussoOne-Regular.ttf');
-}
-@font-face {
-  font-family: 'F';
-  src: url('../../Fuentes/BungeeInline-Regular.ttf');
-}
-
-
-.pnav {
-  margin: 0;
-  margin-right: 250px;
-  margin-left: 70px;
-  font-size: 40px;
-  font-family: 'F';
-  color:  #272aee;
-  text-shadow: 5px 8px 10px rgba(37, 15, 235, 0.527);
-}
-
-
-
-.navinput {
-  margin-right: 10px;
-  color: aliceblue;
-  background-color: rgb(65, 65, 65);
-  border: 2px solid  #272aee;
-  border-radius: 5px;
-  width: 150px;
-  height: 25px;
- 
-}
-
-.buttonnav {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color:  #272aee;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: 'F';
- color: rgb(12, 12, 12);
-}
-
-.containernav {
-  display: flex;
-  align-items: center;
-}
 
 .linknavli {
-  margin-right: 40px;
   font-family: 'Fuente';
   text-decoration: none;
   font-size: 20px;
-
+  padding: 10px;
+  margin-left: 0px;
+  position: relative;
+  color: white;
+  margin-top: 0px;
+  top: -90px;
 }
 
-.linknavli2 {
-  margin-left: auto;
-  font-family: 'Fuente';
-  text-decoration: none;
-  
-  
+.linknavli::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 50%;
+  /* Hace el degradado circular */
+}
+
+.linknavli:hover::before {
+  opacity: 1;
+  animation: electric-glow 0.5s infinite alternate;
+}
+
+/* Estilos específicos para el botón "Home" */
+.home::before {
+  content: 'Home';
+}
+
+/* Estilos específicos para el botón "Create" */
+.create::before {
+  content: 'Create';
+}
+
+/* Estilos específicos para el botón "Contact" */
+.contact::before {
+  content: 'Contact';
 }
 
 .linknavli {
   list-style: none;
-  
+  padding: 5px 0;
 }
 
 .linknavli a {
   text-decoration: none;
-  display: inline;
-  color: #272aee;
+  color: #fff;
 }
-
-.linknavli2 {
+.linknavli,
+.linknavli2,
+.linknavli3 {
   list-style: none;
+  padding: 5px 0;
+  /* Añadimos un espacio entre los enlaces */
 }
 
-.linknavli2 a {
+.linknavli a,
+.linknavli2 a,
+.linknavli3 a {
   text-decoration: none;
-  display: inline;
-  color: #272aee;
+  color: #5d5b5b;
+  /* Cambiamos el color de la tipografía a blanco */
 }
+
+/* Estilos para el contenedor del navbar */
+.containernav {
+  margin-top: 100px;
+  display: flex;
+  /* Cambiamos la dirección a horizontal */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* Centrar el contenido horizontalmente */
+  margin-left: -45px;
+  /* Mover el contenido hacia la derecha en 20 píxeles */
+}
+
+/* Estilos para el contenedor del SearchBar */
+.searchContainer {
+ 
+  flex-direction: column; /* Alineamos los elementos en columna */
+  align-items: center; /* Alineamos los elementos a la derecha */
+  padding: 10px; /* Padding para el contenedor */
+  margin-left: -175px;
+  top: 0px;
+  margin-top: -95px; /* Espacio entre los elementos de la barra de navegación y el searchContainer */
+}
+
+/* Estilos para el input del navbar */
+.navinput {
+  color: aliceblue;
+  background-color: rgb(65, 65, 65);
+  border: 2px solid #1f1f1f;
+  border-radius: 5px;
+  width: 250px;
+  height: 30px;
+  margin-top: -220px;
+  text-align: center;
+  margin-left: 160px;
+}
+
+/* Estilos para el botón del navbar */
+.buttonnav {
+  display: flex;
+  justify-content: center;
+  /* Centra horizontalmente el contenido */
+  align-items: center;
+  /* Centra verticalmente el contenido */
+  position: absolute;
+  /* Coloca el botón en una posición absoluta */
+  top: 50%;
+  /* Coloca el botón en el centro vertical de la imagen */
+  left: 50%;
+  /* Coloca el botón en el centro horizontal de la imagen */
+  transform: translate(-5%,-5%) skewX(-1deg);
+  /* Ajusta la posición y el ángulo del botón */
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  color: white;
+  background: #6225E6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  max-height: 100px;
+  max-width: 250px;
+  top: 380px;
+  margin-left: -100px;
+}
+
+/* Estilos adicionales para el botón de ingresar en el estado hover */
+.buttonnav:hover {
+  box-shadow: 10px 10px 0 #FBC638;
+  /* Transformamos el botón en el estado hover */
+  transform: skewX(-5deg) scale(1.1);
+  /* Aumentamos el tamaño en 10% */
+}
+
+
+/* Estilos para el texto del botón */
+.buttonnav span {
+  transform: skewX(15deg);
+}
+
+/* Estilos para el pseudo-elemento del botón */
+.buttonnav::before {
+  content: "FIND";
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  animation: electricEffect 2s infinite;
+}
+
+/* Definición de la animación */
+@keyframes electricEffect {
+
+  0%,
+  100% {
+    opacity: 1;
+    /* Cambia de 0 a 1 para que aparezca en el inicio */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    /* Aumenta el tamaño de la sombra */
+  }
+
+  30% {
+    opacity: 20;
+    /* Cambia de 1 a 0 para desaparecer a la mitad */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    /* Reduce el tamaño de la sombra */
+  }
+}
+
+
+

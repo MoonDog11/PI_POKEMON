@@ -6,7 +6,8 @@ import Card from "../../Components/Card/card";
 import Pagination from "../../Components/Pagination/pagination";
 import NavBar from "../../Components/NavBar/navbar";
 import style from "./home.module.css";
-import Fondo from "../../Imagenes/Fondo.mp4";
+import Fondo from "../../Imagenes/FONDO_LANDING_POKEAPI.mp4";
+import LogoImage from "../../Imagenes/LOGO_POKEAPI FINAL-1.png";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -61,16 +62,21 @@ export default function Home() {
   }
 
 
-  return (
-    <div>
+    return (
+      <div className={style.mainContainer}>
+        <NavBar/>
       <video className={style.videobackground} autoPlay loop muted>
         <source src={Fondo} type="video/mp4" />
       </video>
+        <div className={style.logoContainer}>
+          <div className={style.logoContainer2}></div>
+        <div className={style.logoBackground}></div>
+        <img className={style.logo} src={LogoImage} alt="Logo" />
+      </div>
       <div className={style.container}>
-        <NavBar />
         <div className={style.filters}>
           <div>
-            <span>Tipos</span>
+            <span className={style['types-span']}>Types</span>
             <select onChange={e => handleFilterType(e)}>
               <option value='all'>All</option>
               <option value='grass'>Grass</option>
@@ -95,38 +101,37 @@ export default function Home() {
             </select>
           </div>
           <div>
-            <span>Orden by Pokemons</span>
+            <span className={style['alphabetic-span']}>ALPHABETIC FILTER</span>
             <select onChange={(e) => handleSort(e)}>
-              <option value="OrdenBy">Orden by Pokemons</option>
+              <option value="az-za">ALL</option>
               <option value="ascPokemon">[A-Z]</option>
               <option value="descPokemon">[Z-A]</option>
             </select>
-            {orden && <span>{orden}</span>}
+            {orden && <span></span>}
           </div>
           <div>
-            <span> Existentes o creados</span>
+            <span className={style['created-span']}> CREATED FILTER </span>
             <select onChange={(e) => handleFilterCreated(e)}>
-              <option value="all">Todos</option>
-              <option value="created">Creados</option>
-              <option value="api">Existentes</option>
+              <option value="all">ALL</option>
+              <option value="created">Created</option>
+              <option value="api">API</option>
             </select>
           </div>
           <div>
-            <span>Orden by Ataque</span>
+            <span className={style['attack-span']}>ATTACK FILTER</span>
             <select onChange={(e) => handleAttack(e)}>
-              <option value="attack">Orden By Ataque</option>
-              <option value="ascA">Menor Ataque</option>
-              <option value="descA">Mayor Ataque</option>
+              <option value="attack">ALL</option>
+              <option value="ascA">Minor</option>
+              <option value="descA">Major</option>
             </select>
-            {attack && <span>{`Filtrado por ataque: ${attack}`}</span>}
+            {attack && <span></span>}
           </div>
           <div>
-            <span>Pokémon por página</span>
+            <span className={style['pokemon-span']}>Pokémon per Page</span>
             <select onChange={(e) => handlePokemonPerPage(e)} value={pokemonPerPage}>
               <option value="12">12</option>
               <option value="24">24</option>
               <option value="50">50</option>
-              {/* Agrega más opciones según tus necesidades */}
             </select>
           </div>
         </div>
@@ -139,11 +144,11 @@ export default function Home() {
           <div></div>
         </div>
         <Pagination
-        pokemonPerPage={pokemonPerPage}
-        allPokemon={allPokemon.length}
-        paginado={paginado}
-        currentPage={currentPage}
-    />
+          pokemonPerPage={pokemonPerPage}
+          allPokemon={allPokemon.length}
+          paginado={paginado}
+          currentPage={currentPage}
+        />
       </div>
       <br />
       <br />

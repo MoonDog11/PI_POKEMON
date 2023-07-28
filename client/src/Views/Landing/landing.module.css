@@ -1,44 +1,243 @@
+/* landing.module.css */
+@font-face {
+  font-family: 'MiFuente';
+  /* Nombre personalizado para la fuente */
+  src: url('../../Fuentes/deathrattlebb_reg.ttf') format('truetype');
+  /* Ruta relativa al archivo de la fuente */
+  /* Puedes agregar otras variantes de la fuente aquí si es necesario (bold, italic, etc.) */
+}
+/* ... (otros estilos) ... */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  /* Evita el desbordamiento del contenido */
+}
+
 .landingg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  /* Evita el desbordamiento del contenido */
+}
+
+.containervideo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 75%;
+  height: 60%;
+  /* Ajusta el video para que ocupe todo el contenedor sin deformarse */
+  overflow: hidden;
+}
+
+.video {
+  width: 150;
+  height: 100%;
+  /* Ajusta el tamaño del video para que conserve las proporciones originales */
+
+}
+/* Estilos para el botón de ingresar */
+.buttonContainer button {
+  display: flex;
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  color: white;
+  background: #6225E6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* Estilos para el texto del botón */
+.buttonContainer button span {
+  transform: skewX(15deg);
+}
+
+/* Estilos para el pseudo-elemento del botón */
+.buttonContainer button::before {
+  content: "GO";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  animation: electricEffect 1s infinite;
+}
+
+/* Definición de la animación */
+@keyframes electricEffect {
+
+  0%,
+  100% {
+    opacity: 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   }
+
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Estilos adicionales para el botón de ingresar en el estado hover */
+.buttonContainer button:hover {
+  box-shadow: 10px 10px 0 #FBC638;
+  padding: 10px 80px;
+  /* Modificar el padding para hacer crecer el botón */
+}
+
+/* Estilos para el contenedor de flechas */
+
+.arrow-container a {
+  text-decoration: none;
+  margin-top: 10px;
+  color: inherit;
+  pointer-events: auto;
+  /* Habilita los eventos de clic para los enlaces */
+}
+
+.arrow {
+  /* ... (otros estilos) ... */
+  width: 16px;
+  height: 16px;
+  fill: white;
+  opacity: 1;
+  transition: transform 0.5s;
+}
+
+/* Ajusta la posición de las flechas inicialmente */
+.part1,
+.part2,
+.part3 {
+  transform: translateX(0);
+}
+
+/* Ajusta el desplazamiento para que las flechas se desplacen solo horizontalmente */
+.arrow-container:hover .part1 {
+  transform: translateX(20px);
+}
+
+.arrow-container:hover .part2 {
+  transform: translateX(40px);
+}
+
+.arrow-container:hover .part3 {
+  transform: translateX(60px);
+}
+
+
+/* Estilos para el contenedor del formulario */
+.authFormContainer {
+  /* Establece el formulario en el centro vertical y horizontalmente */
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Centra el formulario tanto vertical como horizontalmente */
+  color: #ffcc00;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    /* Aplica un degradado de negro con transparencia */
+  padding: 20px;
+  border-radius: 10px;
+  /* Cambia el color del texto a amarillo */
+  margin-top: 20px;
+}
+
+/* Estilos para el formulario */
+.authFormContainer input {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* Cambia el color del texto de los campos de entrada de texto a amarillo */
+  color: #d7b21c;
+}
+
+/* Estilos para las etiquetas del formulario (labels) */
+.authFormContainer label {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* Cambia el color del texto de las etiquetas a amarillo */
+  color: #ffcc00;
+  font-family: 'MiFuente', sans-serif;
+}
+
+/* Estilos para el contenedor de la imagen */
+.imageContainer {
+  /* Establece la posición del contenedor de la imagen */
+  position: absolute;
+  bottom: 80px;
+  /* Ajusta la separación entre la imagen y el video */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Centra horizontalmente el contenedor de la imagen */
+  width: 180%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para la imagen */
+.imageContainer img {
+  /* Ajusta el tamaño de la imagen */
+  width: 220px;
   
-  .containervideo {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .video {
-    width: 100vw;
-    height: calc(100vh - 0px); /* Ajusta el valor "40px" según sea necesario */
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .buttonlanding {
-    position: absolute;
-    bottom: 10%;
-    left: 48%;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-  
-  .buttonlanding button {   
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px 12px;
-    background-color: #cc1af0;
-      color: #ffffff;
-      border-radius: 10px;
-      cursor: pointer;
-      outline: none;
-      border: none;
-  }
+  /* Ajusta el valor según el tamaño deseado */
+  /* Puedes agregar estilos adicionales para la imagen si es necesario */
+  display: block;
+}
+
+.logoContainer {
+  /* Ajusta la posición del contenedor del logo */
+  position: center;
+  top: 30px;
+
+
+}
+
+/* Estilos para la imagen del logo */
+.logo {
+  /* Ajusta el tamaño del logo */
+  width: 450px;
+  /* Ajusta el valor según el tamaño deseado */
+  /* Puedes agregar estilos adicionales para el logo si es necesario */
+  display: block;
+  /* Asegura que el margen automático funcione correctamente */
+  margin: 0 auto;
+  /* No es necesario el 'left' aquí, ya que se establece en el .logoContainer */
+ 
+}
+
+/* Estilos para el texto "Register" */
+.registerContainer {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  /* Alinea el texto al centro horizontalmente */
+}
+
+.register {
+  color: white;
+  font-family: 'MiFuente', sans-serif;
+  font-size: 40px;
+  /* Reduce el tamaño de la letra */
+  transition: transform 0.5s;
+}

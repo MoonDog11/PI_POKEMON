@@ -1,3 +1,9 @@
+    @font-face {
+      font-family: 'Fuente';
+      src: url('../../Fuentes/deathrattlebb_reg.ttf');
+    }
+
+
 .pagnav {
     margin-top: 5px;
     margin-bottom: 5px; 
@@ -6,9 +12,10 @@
   .navul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 10px;
     display: flex;
     justify-content: center;
+   
   
   }
   
@@ -25,13 +32,18 @@
     padding: 5px 10px;
     text-decoration: none;
     color: #161616; /* Color del texto */
-    background-color: #2213f5; /* Color de fondo */
+    background-color: #5505f4; /* Color de fondo */
     border-radius: 10px;
     font-weight: bold;
     font-size: 18px;
+    font-family: 'Fuente';
+    transition: transform 0.3s ease, margin-top 0.3s ease;
+    color: #fff; /* Cambiar el color del texto a blanco */
   }
   
   .pagnav a:hover {
-    background-color: #2305a8; /* Color de fondo al pasar el cursor */
+    background-color: #f4f405;
+    transform: scale(1.1) translateY(-5px);
+    /* Agrandar y subir el botón al pasar el mouse */
   }
   

@@ -1,119 +1,159 @@
-.videobackground {
+.contc {
+  margin-top: 250px;
+  width: 300px;
+  /* Espacio entre el formulario y el botón */
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(89, 39, 238, 0.8), transparent);
+  /* Color de fondo */
+  color: #fff;
+  /* Color de texto */
+  border: none;
+  position: fixed;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+  left: 450px;
+  font-family: 'Fuente';
+  margin-right: -400px;
+
+}
+
+.contc div {
+  margin-bottom: 0px;
+  /* Espaciado vertical entre los elementos div que contienen los inputs */
+}
+
+.buttonc:hover {
+  background-color: #7c05f4;
+  /* Color de fondo al pasar el mouse sobre el botón */
+}
+  
+.videobackground{
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    top: 0%;
+    left: 0%;
     z-index: -1;
-    
+}
+
+.logoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 280px;
+  /* Ajusta la altura según tus necesidades */
+  background-color: #000000;
+}
+
+.logo {
+  width: 450px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  /* Asegura que el logo esté por encima del fondo negro */
+}
+.contc input {
+  background-image: linear-gradient(to bottom, black, #333);
+  /* Degradado vertical de negro a gris oscuro */
+  color: rgb(83, 80, 80);
+  
+  /* Color del texto en blanco para que sea visible */
+  /* Agrega aquí cualquier otro estilo específico que desees para los inputs */
+}
+.ch1 {
+  
+  margin-bottom: 10px;
+  /* Ajusta el valor para separar el título de los inputs */
+}
+ @font-face {
+   font-family: 'Fuente2';
+   src: url('../../Fuentes/JMH Robotus.ttf');
+ }
+/* Estilos para los inputs */
+.contc input[type="text"],
+.contc input[type="number"],
+.contc select {
+  margin-bottom: 5px;
+  font-family: 'Fuente2';
+  /* Ajusta el valor para separar los inputs */
+}
+.backButton {
+  display: flex;
+  justify-content: center;
+  /* Centra horizontalmente el contenido */
+  align-items: center;
+  /* Centra verticalmente el contenido */
+  position: absolute;
+  /* Coloca el botón en una posición absoluta */
+  top: 50%;
+  /* Coloca el botón en el centro vertical de la imagen */
+  left: 50%;
+  /* Coloca el botón en el centro horizontal de la imagen */
+  transform: translate(-5%, -5%) skewX(-1deg);
+  /* Ajusta la posición y el ángulo del botón */
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  color: white;
+  background: #6225E6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  max-height: 100px;
+  max-width: 250px;
+  top: 280px;
+  margin-left: -400px;
+}
+
+/* Estilos adicionales para el botón de ingresar en el estado hover */
+.backButton:hover {
+  box-shadow: 10px 10px 0 #FBC638;
+  /* Transformamos el botón en el estado hover */
+  transform: skewX(-5deg) scale(1.1);
+  /* Aumentamos el tamaño en 10% */
+}
+
+
+/* Estilos para el texto del botón */
+.backButton span {
+  transform: skewX(15deg);
+}
+
+/* Estilos para el pseudo-elemento del botón */
+.backButton::before {
+  content: "BACK";
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  animation: electricEffect 2s infinite;
+}
+
+/* Definición de la animación */
+@keyframes electricEffect {
+
+  0%,
+  100% {
+    opacity: 1;
+    /* Cambia de 0 a 1 para que aparezca en el inicio */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    /* Aumenta el tamaño de la sombra */
   }
-  
-    .container {
-     
-      position: relative;
-    z-index: 1;
-    }
-    .contc {
-        background-color: #2b2a2a;
-        border-radius: 8px;
-        box-shadow: 0 5px 10px #272aee;
-        padding: 10px;
-        width: 25%;
-        box-sizing: border-box;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        cursor: pointer;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-      }
-  
-    .buttonc {
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        text-decoration: none;
-        cursor: pointer;
-        font-family: "Fuente";
-        background-color:#3f3e3e;
-        color: #272aee;
-      }
-      
-     
-      .ch1 {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        font-family: "F";
-        color: #272aee;
-      }
-      
-      .formc {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .formc div {
-        margin-bottom: 10px;
-      }
-      
-      .formc label {
-        font-weight: bold;
-        color: #272aee;
-        font-family: "Fuente";
-      }
-      
-      .formc input[type="text"],
-      .formc input[type="number"],
-      .formc select {
-        padding: 5px;
-        font-size: 16px;
-        border-radius: 4px;
-        border: 2px solid  #272aee;
-        width: 200px;
-        margin: 0 auto;
-        background-color: #0c0c0c;
-        color: #272aee;
-      }
-      
-      
-      .formc p {
-        color: red;
-        font-size: 14px;
-        margin-top: 5px;
-      }
-      
-      .px {
-        margin-bottom: 5px;
-        color: #272aee;
-        font-family: "Fuente";
-        font-weight: bold;
-      }
-      
-      .dx {
-        background-color:#3f3e3e;
-        color: #272aee;
-        border: none;
-        padding: 5px 10px;
-        font-size: 14px;
-        text-decoration: none;
-        cursor: pointer;
-        font-weight: bold;
-      }
-      .types {
-        display: flex;
-        align-items: center;
-      }
-      
-      .types h4 {
-        margin-right: 10px;
-        color: #272aee;
-        font-family: "Fuente";
-      }
-      
-    
-      
-      
+
+  30% {
+    opacity: 20;
+    /* Cambia de 1 a 0 para desaparecer a la mitad */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    /* Reduce el tamaño de la sombra */
+  }
+}

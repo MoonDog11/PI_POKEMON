@@ -1,35 +1,92 @@
 .card {
-  background-color: #3f3e3e;
+  margin-top: 5px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   border-radius: 8px;
-  box-shadow: 0 5px 10px #272aee;
+  box-shadow: 0 5px 10px #2c2b2c;
   padding: 10px;
   width: 100%;
   box-sizing: border-box;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid #5f5f5b;
+  position: relative;
 }
 
+
+
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.0);
+  box-shadow: 0 4px 8px rgba(85, 4, 247, 0.8), 0 0 20px rgb(244, 241, 239);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card::before,
+.card::after {
+  font-family: "Fuente";
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  color: white;
+ /* Color blanco */
+  bottom: 0px;
+  /* Subir 10px desde el borde inferior */
+  transition: height 0.3s ease-in-out;
+}
+
+.card:hover::before {
+  height: 50%;
+}
+
+.card:hover::after {
+  height: 50%;
+  top: 0;
+  /* Cambia "bottom" por "top" para que el resplandor superior se desplace desde arriba hacia abajo */
 }
 
 .card h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-  line-height: 1.2;
-  color: #272aee;
-  text-decoration: none;
-  font-family: "F";
+content: "FIND";
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-shadow: 0 0 10px rgba(241, 236, 236, 0.8);
+  opacity: 0;
+  animation: electricEffect 2s infinite;
+}
+
+/* Definición de la animación */
+@keyframes electricEffect {
+
+  0%,
+  100% {
+    opacity: 1;
+    /* Cambia de 0 a 1 para que aparezca en el inicio */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    /* Aumenta el tamaño de la sombra */
+  }
+
+  30% {
+    opacity: 20;
+    /* Cambia de 1 a 0 para desaparecer a la mitad */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    /* Reduce el tamaño de la sombra */
+  }
 }
 
 .imgcard {
-  height: 200px; /* Establece un alto fijo para el contenedor de la imagen */
-  width: 100%;
+  height: 150px; /* Establece un alto fijo para el contenedor de la imagen */
+  width: 90%;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -48,7 +105,7 @@
 .card .types span {
   display: inline-block;
   padding: 2px 8px;
-  background-color: #272aee;
+  background-color: #f9f7fa;
   border-radius: 4px;
   margin-right: 5px;
   font-size: 12px;

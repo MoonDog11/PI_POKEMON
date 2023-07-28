@@ -1,79 +1,180 @@
-.detail {
-    background-color: #3f3e3e;
-    border-radius: 8px;
-    box-shadow: 0 5px 10px #272aee;
-    padding: 10px;
-    width: 25%;
-    box-sizing: border-box;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    cursor: pointer;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
+/* Estilos para el contenedor principal */
+@font-face {
+  font-family: 'Fuente4';
+  src: url('../../Fuentes/Pokemon Solid.ttf');
+}
+
+
+/* Estilos para el botón "Volver" */
+.detaillink {
+  font-family: "Fuente";
+  background-color: #040404;
+  color: #f9f9fc;
+  margin-right: 50px;
+  font-size: 20px;
+}
+
+.detailcont {
+  margin-left: 900px;
+  width: 100px;
+  height: 100px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+
+@font-face {
+  font-family: 'Fuente3';
+  src: url('../../Fuentes/Pokemon Hollow.ttf');
+}
+.detail{
+  font-family: "Fuente";
+  margin-top: 12px;
+  top:0px;
+  top: 80px;
+  color: white;
+  margin-right: -300px;
+  padding: 130px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  font-size: 20px;
+
+    /* Convertir el contenedor en un contenedor flex */
+}
+ .detailh1{
+  margin-top: -100px;
+ }
+
+/* Estilos para el video de fondo */
+.videobackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Estilos para el contenedor del logo */
+.logoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 262px;
+  background-color: #000000;
+  z-index: -1;
+}
+
+/* Estilos para el logo */
+.logo {
+  width: 450px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.detaillink{
+  margin-top: 0px;
+}
+.imageContainer {
+  width: 350px;
+  /* Puedes ajustar el tamaño según lo necesites */
+  height: 300px;
+  /* Puedes ajustar el tamaño según lo necesites */
+  margin-top: -380px;
+  /* Espacio entre el contenido anterior y la imagen */
+  display: flex;
+  justify-content: center;
+  margin-left: -450px;
+}
+
+/* Estilos para la imagen dentro del contenedor */
+.imageContainer img {
+  width: 135%;
+  height: 135%;
+  object-fit: cover;
+}
+
+.buttonsContainer {
+  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+  z-index:1;
+}
+.backButton {
+  display: flex;
+  justify-content: center;
+  /* Centra horizontalmente el contenido */
+  align-items: center;
+  /* Centra verticalmente el contenido */
+  position: absolute;
+  /* Coloca el botón en una posición absoluta */
+  top: 50%;
+  /* Coloca el botón en el centro vertical de la imagen */
+  left: 50%;
+  /* Coloca el botón en el centro horizontal de la imagen */
+  transform: translate(-5%, -5%) skewX(-1deg);
+  /* Ajusta la posición y el ángulo del botón */
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  color: white;
+  background: #6225E6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  max-height: 100px;
+  max-width: 250px;
+  top: 280px;
+  margin-left: -400px;
+}
+
+/* Estilos adicionales para el botón de ingresar en el estado hover */
+.backButton:hover {
+  box-shadow: 10px 10px 0 #FBC638;
+  /* Transformamos el botón en el estado hover */
+  transform: skewX(-5deg) scale(1.1);
+  /* Aumentamos el tamaño en 10% */
+}
+
+
+/* Estilos para el texto del botón */
+.backButton span {
+  transform: skewX(15deg);
+}
+
+/* Estilos para el pseudo-elemento del botón */
+.backButton::before {
+  content: "BACK";
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  animation: electricEffect 2s infinite;
+}
+
+/* Definición de la animación */
+@keyframes electricEffect {
+
+  0%,
+  100% {
+    opacity: 1;
+    /* Cambia de 0 a 1 para que aparezca en el inicio */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    /* Aumenta el tamaño de la sombra */
   }
 
-  .detail:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  30% {
+    opacity: 20;
+    /* Cambia de 1 a 0 para desaparecer a la mitad */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    /* Reduce el tamaño de la sombra */
   }
-  
-
-  .videobackground {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    
-  }
-  
-    .container {
-     
-      position: relative;
-    z-index: 1;
-    }
-  
-  .detail h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-family: "F";
-    color:#272aee;
-  }
-  
-  .detail img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
-  .detailp {
-    margin-bottom: 5px;
-    color: #272aee;
-    font-weight: bold;
-  }
-  
-  .detail a {
- 
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .detail a:hover {
-    text-decoration: underline;
-  }
-  
-  .detaillink {
-    text-align: center;
-    margin-bottom: 10px;
-    font-family: "Fuente";
-    background-color:#3f3e3e;
-    color: #272aee;
-    font-size: 20px;
-  }
-  
+}

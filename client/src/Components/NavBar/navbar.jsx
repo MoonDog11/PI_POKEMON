@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { getNamePokemon, getPokemon } from "../../Redux/actions";
+import { getNamePokemon} from "../../Redux/actions";
 import style from "./navBar.module.css";
 
 const NavBar = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
+
+  
 
   const handleSearchInputChange = (event) => {
     setName(event.target.value);
@@ -16,42 +18,47 @@ const NavBar = () => {
     dispatch(getNamePokemon(name));
   };
 
-  function handleClick(e) {
-    e.preventDefault();
-    dispatch(getPokemon());
-  }
 
   return (
+
     <div className={style.navbar}>
-      <div>
-      <p className={style.pnav}>Mundo Pokemon</p>
-      </div>
-      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:900i&display=swap" rel="stylesheet" />
       <div className={style.containernav}>
+        {/* Botón para ir a la página Home */}
         <ul>
-          <li className={style.linknavli}>
-            <Link to="/Create">Crear Pokemon</Link>
+          <li className={`${style.linknavli} ${style.home}`} href="#">
+            <Link to="/home" >Home</Link>
           </li>
         </ul>
-        <div>
+
+        {/* Botón para crear Pokemon */}
+        <ul>
+          <li className={`${style.linknavli} ${style.create}`} href="#">
+            <Link to="/Create">Create</Link>
+          </li>
+        </ul>
+
+        {/* Botón para contactar */}
+        <ul>
+          <li className={`${style.linknavli} ${style.contact}`} href="#">
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+    </div>
+        {/* Contenedor para el input y el botón FIND */}
+        <div className={style.searchContainer}>
           <input
-           className={style.navinput} 
+            className={style.navinput} 
             type="text"
             value={name}
             onChange={handleSearchInputChange}
-            placeholder="Busca tu Pokemon..."
+            placeholder="Search your Pokemon..."
           />
-          <button className={style.buttonnav} onClick={handleSearchButtonClick}>
-            <span>Buscar</span>
-          </button>
-        </div>
-        <ul>
-         <li className={style.linknavli2}>
-  <Link to="/home" onClick={e => handleClick(e)}>Home</Link>
-        </li>
-        </ul>
-      </div>
-    </div>
+          {/* Contenedor para el botón FIND */}
+            <button className={style.buttonnav} onClick={handleSearchButtonClick}>
+            </button>
+          </div>
+     </div>
   );
 };
 

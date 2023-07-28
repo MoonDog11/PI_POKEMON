@@ -5,8 +5,6 @@ body {
   height: 100vh; 
 }
 
-
-
 .videobackground {
   position: fixed;
   top: 0;
@@ -18,95 +16,211 @@ body {
   
 }
 
+.mainContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 70vh;
+  margin-top: 270px;
+  margin-bottom: 200px;
+}
 
-  .container {
-   
-    position: relative;
-  z-index: 1;
-  }
+.container {
+   max-height: 800px;
+   overflow-y: scroll;
+}
   
  .card{
-   
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 50px;
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 30px;
        margin-left: 100px;
        margin-right: 100px;
-       margin-top: 10px;
-      
- }
-  
+       padding: 20px;
+       margin-top: 0px;
+        max-height: 330px;
+          /* Ajusta la altura máxima según tus necesidades */
+        overflow-y: auto;
+          /* Aparecerá la barra de desplazamiento solo si es necesario */
+        }
+       
+
+    
   @font-face {
-    font-family: 'Fuente';
-    src: url('../../Fuentes/RussoOne-Regular.ttf');
+    font-family: 'Fuente2';
+    src: url('../../Fuentes/JMH Robotus.ttf');
   }
+
+.filters {
+  display: flex;
+  background: linear-gradient(to bottom, rgba(17, 17, 17, 1), rgba(17, 17, 17, 0.5));
+  padding: 10px;
+  border-radius: 12px;
+  font-family: 'Fuente';
+  color: #fbfbfe;
+  margin-top: 95px;
+  margin-right: 0px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-shadow: 0 0 10px rgba(241, 236, 236, 0.8);
+  opacity: 0;
+  animation: electricEffect 2s infinite;
+  font-size: 10px;
   
-  .filters {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #111111;
-    padding: 5px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(30, 15, 235, 0.527);
-    margin-left: 50px;
-    margin-right: 50px;
+}
+
+/* Definición de la animación */
+@keyframes electricEffect {
+
+  0%,
+  100% {
+    opacity: 1;
+    /* Cambia de 0 a 1 para que aparezca en el inicio */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    /* Aumenta el tamaño de la sombra */
   }
-  
-  /* Estilos para cada opción de filtro */
-  .filters div {
-    display: flex;
-    flex-direction: column;
-   margin-left: 50px; 
+
+  30% {
+    opacity: 20;
+    /* Cambia de 1 a 0 para desaparecer a la mitad */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    /* Reduce el tamaño de la sombra */
   }
-  
-  /* Estilos para los textos */
-  .filters span {
-    font-size: 15px;
-    font-weight: bold;
-    color:  #272aee;
-    margin-bottom: 5px;
-    font-family: 'Fuente';
+}
+.filters span {
+  margin-bottom: -0px;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+  /* Asegura que el texto esté por encima del pseudo-elemento ::before */
+}
+
+/* Estilos para el pseudo-elemento ::before del texto */
+.filters span::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  /* Ubicamos el pseudo-elemento detrás del texto */
+  background: radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  /* Efecto de glow con mayor opacidad y difuminado */
+  /* Ajusta el valor del radio (-5px) para hacer el brillo más ancho */
+  /* El primer color (rgba(255, 255, 255, 0.8)) es el brillo con mayor opacidad y el segundo color (rgba(255, 255, 255, 0)) es la transparencia */
+  border-radius: 12px;
+  /* Agregamos bordes redondeados para que el glow se vea mejor */
+  animation: glowEffect 1s ease-in-out infinite;
+  /* Animación para el efecto de glow */
+}
+
+/* Definición de la animación */
+@keyframes glowEffect {
+
+  0%,
+  100% {
+    transform: scale(1);
+    /* Tamaño normal en el inicio y el final */
   }
-  
-  
-  
-  /* Estilos para los selects */
-  .filters select {
-    padding: 8px;
-    font-size: 15px;
-    border: 2px solid #272aee;
-    border-radius: 4px;
-    background-color: #0c0c0c;
-    font-family: 'Fuente';
-    color: #272aee;
+
+  50% {
+    transform: scale(1.1);
+    /* Aumentar el tamaño a la mitad de la animación para hacerlo un poco más ancho */
   }
+}
+/* Agregar un espaciado horizontal entre los elementos */
+.filters div:not(:last-child) {
+margin-left: 35px;
+}
+
+/* Agregar un espaciado vertical entre el texto y el borde superior e inferior del contenedor */
+.filters-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 30px;
   
-  .filters select:hover {
-    background-color: #77797a;
-  }
+}
+
+/* Estilos para los selects */
+     .filters select {
+       padding: 8px;
+       font-size: 14px;
+       /* Ajustar el tamaño de fuente para hacerlos más pequeños */
+       border: 2px solid #5f5f60;
+       border-radius: 4px;
+       background: linear-gradient(90deg, #908e90, #898787);
+       background-clip: text;
+       color: transparent;
+       font-family: 'Fuente2';
+       text-align: center;
+       /* Ajusta la altura según tus necesidades */
+       height: 30px;
+       /* Ajusta el ancho según tus necesidades */
+       width: 80px;
+       justify-content: center;
+       margin-right: 30px;
+     }
   
-  /* Estilos para las opciones de los selects */
-  .filters select option {
-    font-size: 15px;
-    color: #272aee;
-    font-family: 'Fuente';
-    background-color: #77797a;
+     .filters select:hover {
+       color: #fff;
+       /* Puedes ajustar el color que desees */
+     }
+
   
-  }
+.logoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 280px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background-position: 0% 100%;
+  background-size: 100% 30px; /* Ajusta el valor de 20px según el tamaño del difuminado que deseas */
+  background-repeat: no-repeat;
+  margin-top: 10px;
+}
+
+
+.logo {
+  width: 450px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  /* Asegura que el logo esté por encima del fondo negro */
+}
+
+
+.filters div:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* Agregar un espaciado vertical entre el texto y el borde superior e inferior del contenedor */
+.filters-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 30px;
+}
   
-  /* Estilos adicionales para resaltar las opciones seleccionadas */
-  .filters select option:checked {
-    background-color:#77797a;;
-    color: #333;
-  }
+.logoContainer2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 280px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+  /* Establecer el color negro (rgba(0, 0, 0, 1)) en el inicio y el final del gradiente */
+  background-position: 0% 100%;
+  background-size: 100% 30px;
+  /* Ajusta el valor de 30px según el tamaño del difuminado que deseas */
+  background-repeat: repeat;
+  margin-top: -30px;
   
-  .filters select option:hover {
-    background-color:#77797a;;
-    color: #333;
-  }
-  
-  .h1{
-    color:#77797a;;
-    font-family: "Mi Fuente";
-  }
+}
