@@ -35,7 +35,7 @@ export default function Pagination({ pokemonPerPage, allPokemon, paginado, curre
         {/* Mostramos los números de página */}
         {pageRange.map((number) => (
           <li className={style.navli} key={number}>
-            <a href="#!" onClick={() => paginado(number)}>
+            <a href="#!" onClick={() => paginado(number)} className={style.pageNumber}>
               {number}
             </a>
           </li>

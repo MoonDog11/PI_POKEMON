@@ -228,18 +228,25 @@ export default function Create() {
           )}
         </form>
         {input.types.map((el) => (
+          <div className={style.Px}>
           <div key={el}>
             <p className={style.px}>{el}</p>
             <button className={style.dx} onClick={() => handleDelete(el)}>
               X
             </button>
+            </div>
           </div>
         ))}
+      <div className={style.backButton}>
+       {/* Botón "Back" que te llevará a la página anterior */}
+      <Link to="/home" className={`${style.backButton} ${style.backButtonGray}`}>
+  {/* Capa inferior del texto (gris) */}
+  <span className={style.backButtonNormal}>Back</span>
+  {/* Capa superior del texto (glow) */}
+  <span className={style.backButtonGlow}>Back</span>
+</Link>
+    </div>
       </div>
-      {/* Botón "Back" que te llevará a la página anterior */}
-      <Link to="/home" className={style.backButton}>
-    
-      </Link>
     </div>
   );
 }

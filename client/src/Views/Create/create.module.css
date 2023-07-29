@@ -1,35 +1,74 @@
 .contc {
-  margin-top: 250px;
+  /* Estilos para el contenedor */
+  margin-top: 60px;
   width: 300px;
-  /* Espacio entre el formulario y el botón */
-  padding: 10px 20px;
+  padding: 20px;
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(89, 39, 238, 0.8), transparent);
-  /* Color de fondo */
   color: #fff;
-  /* Color de texto */
   border: none;
   position: fixed;
   border-radius: 8px;
   transition: background-color 0.3s ease-in-out;
-  left: 450px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   font-family: 'Fuente';
-  margin-right: -400px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contc div {
-  margin-bottom: 0px;
-  /* Espaciado vertical entre los elementos div que contienen los inputs */
+  /* Estilos para los elementos div que contienen los inputs y labels */
+  margin-bottom: 5px;
+  /* Espaciado vertical entre los elementos div que contienen los inputs y labels */
+  display: flex;
+  align-items: center;
 }
 
-.buttonc:hover {
-  background-color: #7c05f4;
-  /* Color de fondo al pasar el mouse sobre el botón */
+.contc label {
+ 
+  min-width: 100px;
+  /* Establecer un ancho mínimo para los labels */
+  margin-right: 10px;
+  /* Espaciado derecho entre el label y el input */
 }
+
+.contc input {
+  /* Estilos para los inputs */
+  background-image: linear-gradient(to bottom, black, #333);
+  /* Degradado vertical de negro a gris oscuro */
+  color: rgb(83, 80, 80);
+  /* Color del texto en blanco para que sea visible */
+  width: 200px;
+  /* Establece un ancho fijo para los inputs */
+  /* Agrega aquí cualquier otro estilo específico que desees para los inputs */
+}
+
+.ch1 {
+
+  margin-bottom: 50px;
+  /* Ajusta el valor para separar el título de los inputs */
+}
+
+@font-face {
+  font-family: 'Fuente2';
+  src: url('../../Fuentes/JMH Robotus.ttf');
+}
+
+/* Estilos para los inputs */
+.contc input[type="text"],
+.contc input[type="number"],
+.contc select {
+  margin-bottom: 5px;
+  font-family: 'Fuente2';
+  /* Ajusta el valor para separar los inputs */
+}
+
   
 .videobackground{
     position: fixed;
@@ -55,105 +94,186 @@
   position: relative;
   /* Asegura que el logo esté por encima del fondo negro */
 }
-.contc input {
-  background-image: linear-gradient(to bottom, black, #333);
-  /* Degradado vertical de negro a gris oscuro */
-  color: rgb(83, 80, 80);
-  
-  /* Color del texto en blanco para que sea visible */
-  /* Agrega aquí cualquier otro estilo específico que desees para los inputs */
-}
-.ch1 {
-  
-  margin-bottom: 10px;
-  /* Ajusta el valor para separar el título de los inputs */
-}
- @font-face {
-   font-family: 'Fuente2';
-   src: url('../../Fuentes/JMH Robotus.ttf');
- }
-/* Estilos para los inputs */
-.contc input[type="text"],
-.contc input[type="number"],
-.contc select {
-  margin-bottom: 5px;
-  font-family: 'Fuente2';
-  /* Ajusta el valor para separar los inputs */
-}
+
+/* Estilos para el botón "Back" */
 .backButton {
   display: flex;
   justify-content: center;
-  /* Centra horizontalmente el contenido */
   align-items: center;
-  /* Centra verticalmente el contenido */
   position: absolute;
-  /* Coloca el botón en una posición absoluta */
-  top: 50%;
-  /* Coloca el botón en el centro vertical de la imagen */
-  left: 50%;
-  /* Coloca el botón en el centro horizontal de la imagen */
-  transform: translate(-5%, -5%) skewX(-1deg);
-  /* Ajusta la posición y el ángulo del botón */
-  padding: 10px 45px;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 40px;
-  color: white;
-  background: #6225E6;
-  transition: 1s;
-  box-shadow: 6px 6px 0 black;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  max-height: 100px;
-  max-width: 250px;
-  top: 280px;
-  margin-left: -400px;
+  top: 10%;
+  left: -90%;
+  font-size: 70px;
+  color: #333;
+  margin-top: -60px;
 }
 
-/* Estilos adicionales para el botón de ingresar en el estado hover */
-.backButton:hover {
-  box-shadow: 10px 10px 0 #FBC638;
-  /* Transformamos el botón en el estado hover */
-  transform: skewX(-5deg) scale(1.1);
-  /* Aumentamos el tamaño en 10% */
-}
-
-
-/* Estilos para el texto del botón */
-.backButton span {
-  transform: skewX(15deg);
-}
-
-/* Estilos para el pseudo-elemento del botón */
-.backButton::before {
-  content: "BACK";
-  font-family: 'Poppins', sans-serif;
+/* Estilo para el texto normal (gris) */
+.backButton a {
   position: relative;
-  top: 0px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  font-family: 'Fuente', sans-serif;
+  color: #5b5959;
+  /* Color de texto gris */
+  text-decoration: none;
+  z-index: 2;
+}
+
+/* Estilo para el texto con glow */
+.backButtonGlow {
+  position: absolute;
+  top: -10px;
+  /* Ajusta la posición vertical deseada */
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background: radial-gradient(circle, rgba(255, 255, 255, 1.6), transparent);
   opacity: 0;
-  animation: electricEffect 2s infinite;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.backButton:hover .backButtonGlow {
+  animation: electric-glow 0.5s forwards;
+  /* Cambiamos a 'forwards' para mantener la última animación */
 }
 
 /* Definición de la animación */
-@keyframes electricEffect {
-
-  0%,
-  100% {
+@keyframes electric-glow {
+  0% {
     opacity: 1;
-    /* Cambia de 0 a 1 para que aparezca en el inicio */
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-    /* Aumenta el tamaño de la sombra */
   }
 
   30% {
-    opacity: 20;
-    /* Cambia de 1 a 0 para desaparecer a la mitad */
+    opacity: 0;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    /* Reduce el tamaño de la sombra */
   }
+
+  100% {
+    opacity: 10%;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Estilos durante el hover */
+.backButton:hover a {
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Estilos para el botón "CREATE POKEMON" */
+.buttonc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 70px;
+  color: #333;
+  background: none;
+  /* Eliminar el fondo blanco */
+  border: none;
+  /* Eliminar el borde */
+  cursor: pointer;
+  font-family: 'Fuente', sans-serif;
+  transition: color 0.3s ease-in-out;
+  /* Transición para el cambio de color del texto */
+  transform: translate(-50%, -50%);
+  /* Centrar el botón horizontal y verticalmente */
+  margin-top: 300px;
+  /* Ajustar el margen para centrar verticalmente */
+}
+/* Estilo para el texto con glow */
+.buttonc::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background: radial-gradient(circle, rgba(255, 255, 255, 1.6), transparent);
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.buttonc:hover::before {
+  animation: electric-glow 0.5s forwards;
+}
+
+/* Definición de la animación */
+@keyframes electric-glow {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+
+  30% {
+    opacity: 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+
+  100% {
+    opacity: 10%;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Estilos durante el hover */
+.buttonc:hover {
+  color: #fff;
+  /* Cambiar el color del texto a blanco */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  /* Agregar el efecto de glow al texto */
+}
+
+.columnContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para el <p> */
+.columnContainer p {
+  font-size: 24px;
+  color: #333;
+  /* Otros estilos que desees para el texto */
+}
+
+/* Estilos para el botón */
+.columnContainer button {
+  margin-top: 10px;
+  /* Espacio entre el <p> y el botón */
+  font-size: 16px;
+  color: #fff;
+  background-color: #7405f4;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  /* Otros estilos que desees para el botón */
+}
+
+.types {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -10px;
+}
+
+/* Estilo para el select (lista desplegable) */
+.types select {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilo para las opciones del select */
+.types option {
+  font-size: 16px;
 }

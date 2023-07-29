@@ -124,9 +124,12 @@ export default function Detail(props) {
         <p className={style.detailp}>Pokemon no encontrado</p>
       )}
       {/* Botón "Back" que te llevará al home */}
-      <Link to="/home" className={style.backButton}>
-   
-      </Link>
+      <Link to="/home" className={`${style.backButton} ${style.backButtonGray}`}>
+  {/* Capa inferior del texto (gris) */}
+  <span className={style.backButtonNormal}>Back</span>
+  {/* Capa superior del texto (glow) */}
+  <span className={style.backButtonGlow}>Back</span>
+</Link>
     </div>
   );
 }

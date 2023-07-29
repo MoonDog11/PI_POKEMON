@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./card.module.css";
-import Pokemon from "../../Imagenes/Pokemoncreado.png";
+import Pokemon from "../../Imagenes/Created_2.png";
 
 const Card = ({ id, name, img, types }) => {
   return (
@@ -15,6 +15,7 @@ const Card = ({ id, name, img, types }) => {
           ) : (
             <img src={Pokemon} alt="Imagen por defecto" />
           )}
+          <p>Detail</p>
         </div>
         <div className={styles.types}>
           {types?.map((t, index) => (
