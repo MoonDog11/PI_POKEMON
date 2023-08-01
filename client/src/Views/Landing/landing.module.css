@@ -160,6 +160,7 @@ body {
 /* Estilos para el formulario */
 .authFormContainer input {
   margin-top: 5px;
+  width: 220px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -240,4 +241,7 @@ body {
   font-size: 40px;
   /* Reduce el tamaño de la letra */
   transition: transform 0.5s;
+}
+.warningMessage {
+  text-size-adjust: 12px;
 }

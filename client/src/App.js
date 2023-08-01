@@ -4,6 +4,7 @@ import Create from "./Views/Create/create";
 import Detail from "./Views/Detail/detail";
 import Home from "./Views/Home/home";
 import Landing from "./Views/Landing/landing";
+import Contact from "./Views/Contact/Contact";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route exact path="/home" component={Home} />
         <Route path="/detail/:id" component={Detail} />
         <Route path="/create" component={Create} />
+        <Route path="/contact" component={Contact} />
         <Route path="/" component={Landing} />
       </Switch>
     </div>

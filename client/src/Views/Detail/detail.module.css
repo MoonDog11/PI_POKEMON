@@ -6,19 +6,19 @@
 
 
 /* Estilos para el botón "Volver" */
-.detaillink {
-  font-family: "Fuente";
-  background-color: #040404;
-  color: #f9f9fc;
-  margin-right: 50px;
-  font-size: 20px;
-}
+
 
 .detailcont {
-  margin-left: 900px;
-  width: 100px;
-  height: 100px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  margin-top: -300px;
+  margin-left: 950px;
+  width: 700px;
+  height: -300px;
+  border-radius: 10px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+ font-family: 'Fuente2';
+ font-size: 15PX;
+ color:#fff;
+ 
 }
 
 
@@ -26,21 +26,9 @@
   font-family: 'Fuente3';
   src: url('../../Fuentes/Pokemon Hollow.ttf');
 }
-.detail{
-  font-family: "Fuente";
-  margin-top: 12px;
-  top:0px;
-  top: 80px;
-  color: white;
-  margin-right: -300px;
-  padding: 130px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-  font-size: 20px;
 
-    /* Convertir el contenedor en un contenedor flex */
-}
  .detailh1{
-  margin-top: -100px;
+  margin-top: 350px;
  }
 
 /* Estilos para el video de fondo */
@@ -77,11 +65,11 @@
   margin-top: 0px;
 }
 .imageContainer {
-  width: 350px;
+  width: 360px;
   /* Puedes ajustar el tamaño según lo necesites */
-  height: 300px;
+  height: 350px;
   /* Puedes ajustar el tamaño según lo necesites */
-  margin-top: -380px;
+  margin-top: -280px;
   /* Espacio entre el contenido anterior y la imagen */
   display: flex;
   justify-content: center;
@@ -90,8 +78,10 @@
 
 /* Estilos para la imagen dentro del contenedor */
 .imageContainer img {
-  width: 135%;
-  height: 135%;
+  margin-top: 200px;
+  margin-left: -350px;
+  width: 170%;
+  height: 170%;
   object-fit: cover;
 }
 
@@ -100,7 +90,6 @@
   display: flex;
   justify-content: center;
 }
-
 
 .backButton {
   display: flex;
@@ -167,4 +156,69 @@
   /* Color de texto blanco al hacer hover */
   text-shadow: 0 0 20px rgba(255, 255, 255, 1);
   /* Añadimos un resplandor blanco al texto al hacer hover */
+}
+
+.detailp{
+  font-family: 'Fuente2';
+  font-size: 35px;
+
+  color:#f9f9fc;
+}
+
+.container {
+  margin-top: -100px;
+  display: flex;
+  justify-content: center;
+  /* Centrar horizontalmente */
+  align-items: center;
+  /* Centrar verticalmente */
+  height: 550vh;
+  /* Establece el alto del contenedor al 100% del viewport */
+}
+
+.attributeContainer {
+  margin-top: -40px;
+}
+
+.attribute {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  border-radius: 10px;
+  color: #fbf9f9;
+  gap: 10px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.progress-bar-container {
+  margin-top: 0px;
+  width: 100%;
+  height: 20px;
+  background-color: #393636;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  border-radius: 10px;
+}
+
+
+.progress-bar-fill {
+  transition: width 1s ease;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  /* Cambiamos el color de fondo a blanco */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  /* Agregamos una sombra con efecto de brillo */
+}
+.atributeText{
+  margin-top: -150px;
+}
+
+.progress-bar-fill.active {
+  transition: width 1s ease;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  /* Cambiamos el color de fondo a blanco */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  /* Agregamos una sombra con efecto de brillo */
 }
